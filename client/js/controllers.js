@@ -1,4 +1,4 @@
-angular.module('your_app_name.controllers', [])
+angular.module('Whatsapp.controllers', [])
 
 .controller('AuthCtrl', function($scope, $ionicConfig) {
 

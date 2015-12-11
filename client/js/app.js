@@ -9,15 +9,15 @@ angular.module('underscore', [])
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 console.log("running!")
-angular.module('your_app_name', [
+angular.module('Whatsapp', [
   'ionic',
   'angularMoment',
-  'your_app_name.controllers',
-  'your_app_name.directives',
-  'your_app_name.filters',
-  'your_app_name.services',
-  'your_app_name.factories',
-  'your_app_name.config',
+  'Whatsapp.controllers',
+  'Whatsapp.directives',
+  'Whatsapp.filters',
+  'Whatsapp.services',
+  'Whatsapp.factories',
+  'Whatsapp.config',
   'underscore',
   'ngMap',
   'ngResource',
@@ -282,3 +282,15 @@ angular.module('your_app_name', [
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/auth/walkthrough');
 });
+
+
+if (Meteor.isCordova) {
+  angular.element(document).on('deviceready', onReady);
+}
+else {
+  angular.element(document).ready(onReady);
+}
+
+function onReady() {
+  angular.bootstrap(document, ['Whatsapp']);
+}
