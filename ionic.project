@@ -1,0 +1,14 @@
+{
+  "name": "ionFullApp",
+  "app_id": "79895573",
+  "gulpStartupTasks": [
+    "sass",
+    "templatecache",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "documentRoot": "www"
+}
