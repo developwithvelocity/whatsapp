@@ -24,7 +24,7 @@ okland:accounts-phone
 reywood:publish-composite
 okland:camera-ui
 adrianliaw:youtube-iframe-api
-angularui:angular-google-maps
 angular:angular-resource
 netanelgilad:ng-cordova
 wolves:bourbon
+wormy:angularjs-google-maps

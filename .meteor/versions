@@ -7,7 +7,6 @@ angular:angular@1.4.8
 angular:angular-animate@1.4.8
 angular:angular-resource@1.4.8
 angular:angular-sanitize@1.4.8
-angularui:angular-google-maps@2.2.1
 angularui:angular-ui-router@0.2.15
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
@@ -62,7 +61,6 @@ momentjs:moment@2.10.6
 mongo@1.1.3
 mongo-id@1.0.1
 netanelgilad:ng-cordova@0.1.13
-nmccready:angular-simple-logger@0.0.4
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
@@ -86,7 +84,6 @@ spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
 standard-minifiers@1.0.2
-stevezhu:lodash@1.0.2
 templating@1.1.5
 templating-tools@1.0.0
 tracker@1.0.9
@@ -97,3 +94,4 @@ url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
 wolves:bourbon@3.1.0
+wormy:angularjs-google-maps@1.14.14
