@@ -23,7 +23,7 @@ if (Meteor.isClient) {
     'underscore',
     //'ngMap',
     'ngResource',
-    'ngCordova',
+    'ngCordova'
     //'slugifier',
     //'ionic.contrib.ui.tinderCards',
     //'youtube-embed'
