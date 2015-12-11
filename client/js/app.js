@@ -3,6 +3,18 @@ angular.module('underscore', [])
     return window._; // assumes underscore has already been loaded on the page
 });
 
+function onReady() {
+  angular.bootstrap(document, ['Whatsapp'], {strictDi: true});
+}
+
+if (Meteor.isCordova) {
+  angular.element(document).on("deviceready", onReady);
+}
+else {
+  angular.element(document).ready(onReady);
+}
+
+
 var app = angular.module('Whatsapp', [
   'angular-meteor',
   'ui.router',
@@ -16,27 +28,62 @@ var app = angular.module('Whatsapp', [
   'Whatsapp.factories',
   'Whatsapp.config',
   'underscore',
-  //'ngMap',
+  'ngMap',
   'ngResource',
   'ngCordova'
   //'slugifier',
   //'ionic.contrib.ui.tinderCards',
   //'youtube-embed'
-]);
+])
 
-function onReady() {
-  angular.bootstrap(document, ['Whatsapp'], {strictDi: true});
-}
+.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout) {
 
-if (Meteor.isCordova) {
-  angular.element(document).on("deviceready", onReady);
-}
-else {
-  angular.element(document).ready(onReady);
-}
+  $ionicPlatform.on("deviceready", function(){
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
 
+    PushNotificationsService.register();
+  });
 
-app.config(['$urlRouterProvider', '$stateProvider',
+  // This fixes transitions for transparent background views
+  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
+    if(toState.name.indexOf('auth.walkthrough') > -1)
+    {
+      // set transitions to android to avoid weird visual effect in the walkthrough transitions
+      $timeout(function(){
+        $ionicConfig.views.transition('android');
+        $ionicConfig.views.swipeBackEnabled(false);
+      	console.log("setting transition to android and disabling swipe back");
+      }, 0);
+    }
+  });
+  $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
+    if(toState.name.indexOf('app.feeds-categories') > -1)
+    {
+      // Restore platform default transition. We are just hardcoding android transitions to auth views.
+      $ionicConfig.views.transition('platform');
+      // If it's ios, then enable swipe back again
+      if(ionic.Platform.isIOS())
+      {
+        $ionicConfig.views.swipeBackEnabled(true);
+      }
+    	console.log("enabling swipe back and restoring transition to platform default", $ionicConfig.views.transition());
+    }
+  });
+
+  $ionicPlatform.on("resume", function(){
+    PushNotificationsService.register();
+  });
+
+})
+
+.config(['$urlRouterProvider', '$stateProvider',
   function($urlRouterProvider, $stateProvider){
 
     $stateProvider
