@@ -11,9 +11,31 @@ angular.module('Whatsapp.controllers', [])
 
 // FORMS
 .controller('FormsCtrl', function($scope) {
+  var ctrl = this;
 
-  // SANDEEP, make changes here
-  $scope.firstName = "John";
+  ctrl.firstName = "Not yet set";
+
+  ctrl.restore = function() {
+    console.log( "restore..." );
+    ctrl.firstName = Messages.find({ kiosk: "mall" }).fetch()["firstName"];
+  };
+
+  ctrl.save = function() {
+    console.log( "save..." );
+    Messages.upsert({
+        // Selector
+        kiosk: "mall"
+    }, {
+        // Modifier
+        $set: {
+            firstName: ctrl.firstName
+        }
+    });
+  };
+
+  ctrl.xxx = function() {
+    console.log( "xxx..." );
+  };
 
 })
 

@@ -8,11 +8,19 @@
   <ion-content>
     <ul class="list">
 
-      <div class="item item-divider">Inline Labels</div>
+      <div class="item item-divider">Inline Labels
+
+        <button ng-click="ctrl.save()" class="button button-small">
+          Save
+        </button>
+        <button ng-click="ctrl.restore()" class="button button-small">
+          Restore
+        </button>
+      </div>
 
       <label class="item item-input">
         <span class="input-label">First Name</span>
-        <input type="text" ng-model="firstName">
+        <input type="text" ng-model="ctrl.firstName">
       </label>
       <label class="item item-input">
         <span class="input-label">Last Name</span>
@@ -60,8 +68,11 @@
         <label class="item-input-wrapper">
           <input type="text" placeholder="Search...">
         </label>
-        <button class="button button-small">
-          Submit
+        <button ng-click="ctrl.save()" class="button button-small">
+          Save
+        </button>
+        <button ng-click="ctrl.restore()" class="button button-small">
+          Restore
         </button>
       </div>
     </ul>

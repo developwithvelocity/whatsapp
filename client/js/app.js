@@ -263,7 +263,7 @@ var app = angular.module('Whatsapp', [
       views: {
         'menuContent': {
           templateUrl: "client/views/app/forms.ng.html",
-          controller: 'FormsCtrl'
+          controller: 'FormsCtrl as ctrl'
         }
       }
     })
