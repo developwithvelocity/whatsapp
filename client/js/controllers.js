@@ -19,7 +19,7 @@ angular.module('your_app_name.controllers', [])
 
 
 //LOGIN
-.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
+.controller('LoginCtrl', function($scope, $state, $q, $rootScope) {
 	$scope.doLogIn = function(){
 		$state.go('app.feeds-categories');
 	};
