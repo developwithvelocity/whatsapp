@@ -1,3 +1,4 @@
 {
-  "directory": "../../.meteor/local/bower"
+  "directory": "../../.meteor/local/bower",
+  "ignoredDependencies": ["angular"]
 }

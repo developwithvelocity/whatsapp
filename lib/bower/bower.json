@@ -5,8 +5,5 @@
     "angular-slugify": "williamboman/angular-slugify",
     "ionic-contrib-tinder-cards": "*",
     "angular-youtube-mb": "~1.1.0"
-  },
-  "ignoredDependencies": [
-    "angular"
-  ]
+  }
 }
