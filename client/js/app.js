@@ -81,38 +81,38 @@ angular.module('Whatsapp', [
   //INTRO
   .state('auth', {
     url: "/auth",
-    templateUrl: "client/views/auth/auth.html",
+    templateUrl: "client/views/auth/auth.ng.html",
     abstract: true,
     controller: 'AuthCtrl'
   })
 
   .state('auth.walkthrough', {
     url: '/walkthrough',
-    templateUrl: "client/views/auth/walkthrough.html"
+    templateUrl: "client/views/auth/walkthrough.ng.html"
   })
 
   .state('auth.login', {
     url: '/login',
-    templateUrl: "client/views/auth/login.html",
+    templateUrl: "client/views/auth/login.ng.html",
     controller: 'LoginCtrl'
   })
 
   .state('auth.signup', {
     url: '/signup',
-    templateUrl: "client/views/auth/signup.html",
+    templateUrl: "client/views/auth/signup.ng.html",
     controller: 'SignupCtrl'
   })
 
   .state('auth.forgot-password', {
     url: "/forgot-password",
-    templateUrl: "client/views/auth/forgot-password.html",
+    templateUrl: "client/views/auth/forgot-password.ng.html",
     controller: 'ForgotPasswordCtrl'
   })
 
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "client/views/app/side-menu.html",
+    templateUrl: "client/views/app/side-menu.ng.html",
     controller: 'AppCtrl'
   })
 
@@ -121,7 +121,7 @@ angular.module('Whatsapp', [
     url: "/miscellaneous",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/miscellaneous/miscellaneous.html"
+        templateUrl: "client/views/app/miscellaneous/miscellaneous.ng.html"
       }
     }
   })
@@ -130,7 +130,7 @@ angular.module('Whatsapp', [
     url: "/miscellaneous/maps",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/miscellaneous/maps.html",
+        templateUrl: "client/views/app/miscellaneous/maps.ng.html",
         controller: 'MapsCtrl'
       }
     }
@@ -140,7 +140,7 @@ angular.module('Whatsapp', [
     url: "/miscellaneous/image-picker",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/miscellaneous/image-picker.html",
+        templateUrl: "client/views/app/miscellaneous/image-picker.ng.html",
         controller: 'ImagePickerCtrl'
       }
     }
@@ -151,7 +151,7 @@ angular.module('Whatsapp', [
     url: "/layouts",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/layouts/layouts.html"
+        templateUrl: "client/views/app/layouts/layouts.ng.html"
       }
     }
   })
@@ -160,7 +160,7 @@ angular.module('Whatsapp', [
     url: "/layouts/tinder-cards",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/layouts/tinder-cards.html",
+        templateUrl: "client/views/app/layouts/tinder-cards.ng.html",
         controller: 'TinderCardsCtrl'
       }
     }
@@ -170,7 +170,7 @@ angular.module('Whatsapp', [
     url: "/layouts/slider",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/layouts/slider.html"
+        templateUrl: "client/views/app/layouts/slider.ng.html"
       }
     }
   })
@@ -180,7 +180,7 @@ angular.module('Whatsapp', [
     url: "/feeds-categories",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/feeds/feeds-categories.html",
+        templateUrl: "client/views/app/feeds/feeds-categories.ng.html",
         controller: 'FeedsCategoriesCtrl'
       }
     }
@@ -190,7 +190,7 @@ angular.module('Whatsapp', [
     url: "/category-feeds/:categoryId",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/feeds/category-feeds.html",
+        templateUrl: "client/views/app/feeds/category-feeds.ng.html",
         controller: 'CategoryFeedsCtrl'
       }
     }
@@ -200,7 +200,7 @@ angular.module('Whatsapp', [
     url: "/feed-entries/:categoryId/:sourceId",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/feeds/feed-entries.html",
+        templateUrl: "client/views/app/feeds/feed-entries.ng.html",
         controller: 'FeedEntriesCtrl'
       }
     }
@@ -211,7 +211,7 @@ angular.module('Whatsapp', [
     url: "/wordpress",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/wordpress/wordpress.html",
+        templateUrl: "client/views/app/wordpress/wordpress.ng.html",
         controller: 'WordpressCtrl'
       }
     }
@@ -221,7 +221,7 @@ angular.module('Whatsapp', [
     url: "/wordpress/:postId",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/wordpress/wordpress_post.html",
+        templateUrl: "client/views/app/wordpress/wordpress_post.ng.html",
         controller: 'WordpressPostCtrl'
       }
     },
@@ -242,7 +242,7 @@ angular.module('Whatsapp', [
     url: "/settings",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/settings.html",
+        templateUrl: "client/views/app/settings.ng.html",
         controller: 'SettingsCtrl'
       }
     }
@@ -252,7 +252,7 @@ angular.module('Whatsapp', [
     url: "/forms",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/forms.html",
+        templateUrl: "client/views/app/forms.ng.html",
         controller: 'FormsCtrl'
       }
     }
@@ -262,7 +262,7 @@ angular.module('Whatsapp', [
     url: "/profile",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/profile.html"
+        templateUrl: "client/views/app/profile.ng.html"
       }
     }
   })
@@ -271,7 +271,7 @@ angular.module('Whatsapp', [
     url: "/bookmarks",
     views: {
       'menuContent': {
-        templateUrl: "client/views/app/bookmarks.html",
+        templateUrl: "client/views/app/bookmarks.ng.html",
         controller: 'BookMarksCtrl'
       }
     }
