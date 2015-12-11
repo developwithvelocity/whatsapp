@@ -23,7 +23,7 @@ angular.module('Whatsapp.directives', [])
 				tabs.push(tab);
 			};
 		},
-		templateUrl: 'views/common/my-tabs.html'
+		templateUrl: 'client/views/common/my-tabs.ng.html'
 	};
 })
 
@@ -38,7 +38,7 @@ angular.module('Whatsapp.directives', [])
 		link: function(scope, element, attrs, tabsCtrl) {
 			tabsCtrl.addTab(scope);
 		},
-		templateUrl: 'views/common/my-tab.html'
+		templateUrl: 'client/views/common/my-tab.ng.html'
 	};
 })
 
@@ -87,7 +87,7 @@ angular.module('Whatsapp.directives', [])
 				$scope.$broadcast("toggle-type", $scope.show);
 			};
 		},
-		templateUrl: 'views/common/show-hide-password.html',
+		templateUrl: 'client/views/common/show-hide-password.ng.html',
 		restrict: 'A',
 		replace: false,
 		transclude: true
@@ -187,7 +187,7 @@ angular.module('Whatsapp.directives', [])
 				}
 		  });
 		},
-		templateUrl: 'views/common/ionic-youtube-video.html',
+		templateUrl: 'client/views/common/ionic-youtube-video.ng.html',
 		replace: false
 	};
 })
@@ -310,7 +310,7 @@ angular.module('Whatsapp.directives', [])
 				}
 			}
 		},
-		templateUrl: 'views/common/multi-bg.html',
+		templateUrl: 'client/views/common/multi-bg.ng.html',
 		restrict: 'A',
 		replace: true,
 		transclude: true
@@ -351,7 +351,7 @@ angular.module('Whatsapp.directives', [])
 				});
 			};
 		},
-		templateUrl: 'views/common/pre-img.html'
+		templateUrl: 'client/views/common/pre-img.ng.html'
 	};
 })
 
