@@ -16,27 +16,18 @@ angular.module('Whatsapp.controllers', [])
   ctrl.firstName = "change me";
 
   ctrl.restore = function() {
-    console.log( "restore..." );
     var message = Messages.find({kiosk:'mall'}).fetch();
     ctrl.firstName = message && message.length > 0 ? message[0].firstName : "not found"
   };
 
 
   ctrl.save = function() {
-    console.log( "save..." );
-
     var message = Messages.findOne({kiosk:'mall'});
     if (message) {
       Messages.update({_id:message['_id']}, {$set:{firstName: ctrl.firstName}});
     } else {
       Messages.insert({kiosk:'mall', firstName: ctrl.firstName });
     }
-
-    console.log(x);
-  };
-
-  ctrl.xxx = function() {
-    console.log( "xxx..." );
   };
 
 })
