@@ -23,10 +23,10 @@ if (Meteor.isClient) {
     'underscore',
     //'ngMap',
     'ngResource',
-    'ngCordova'
-    //'slugifier',
-    //'ionic.contrib.ui.tinderCards',
-    //'youtube-embed'
+    'ngCordova',
+    'slugifier',
+    'ionic.contrib.ui.tinderCards',
+    'youtube-embed'
   ]);
 
   function onReady() {
