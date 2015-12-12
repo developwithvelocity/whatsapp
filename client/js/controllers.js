@@ -13,21 +13,26 @@ angular.module('Whatsapp.controllers', [])
 .controller('FormsCtrl', function($scope, $meteor) {
   var ctrl = this;
 
-  ctrl.firstName = "Not yet set";
+  ctrl.firstName = "change me";
 
   ctrl.restore = function() {
     console.log( "restore..." );
-    var x = $meteor.call('getFirstName', {kiosk: "mall"} );
-    ctrl.firstName = x;
+    var message = Messages.find({kiosk:'mall'}).fetch();
+    ctrl.firstName = message && message.length > 0 ? message[0].firstName : "not found"
   };
 
 
   ctrl.save = function() {
     console.log( "save..." );
-    $meteor.call('saveFirstName', {
-      kiosk: "mall",
-      firstName: ctrl.firstName
-    });
+
+    var message = Messages.findOne({kiosk:'mall'});
+    if (message) {
+      Messages.update({_id:message['_id']}, {$set:{firstName: ctrl.firstName}});
+    } else {
+      Messages.insert({kiosk:'mall', firstName: ctrl.firstName });
+    }
+
+    console.log(x);
   };
 
   ctrl.xxx = function() {
